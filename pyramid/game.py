@@ -2,12 +2,12 @@ from card_base.deck import Deck
 from card_base.card import Card
 
 
-def higher_lower():
-    game = HighLowGame()
+def pyramid():
+    game = PyramidGame()
     game.start_game()
     pass
 
 
-class HighLowGame:
+class PyramidGame:
     def start_game(self):
-        print("Welcome to higher lower, lets play")
+        print("Welcome to pyramid, lets play")

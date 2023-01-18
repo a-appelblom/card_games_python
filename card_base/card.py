@@ -5,7 +5,7 @@ from enum import Enum
 
 
 class CardValue(Enum):
-    ONE = "1"
+    ACE = "ACE"
     TWO = "2"
     THREE = "3"
     FOUR = "4"
@@ -25,9 +25,6 @@ class CardSuit(Enum):
     DIAMONDS = "♢"
     SPADES = "♠"
     CLUBS = "♣"
-
-
-print(__name__)
 
 
 @dataclass

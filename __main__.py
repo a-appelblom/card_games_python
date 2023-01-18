@@ -1,10 +1,13 @@
 
+from pyramid.game import pyramid
 from go_fish.game import go_fish
 from higher_lower.game import higher_lower
+from memory.game import memory
 from typing import List
 
 
-menu_options: List[str] = ["Exit", "Higher Lower", "Go Fish"]
+menu_options: List[str] = [
+    "Exit", "Higher Lower", "Go Fish", "Pyramid", "Memory"]
 
 
 class NonValidOptionError(Exception):
@@ -14,6 +17,7 @@ class NonValidOptionError(Exception):
 def menu():
     print_options()
     choice = get_option()
+    run_option(choice)
     pass
 
 
@@ -27,7 +31,7 @@ def get_option():
     try:
         choice_string = input("Enter option: ")
         choice = int(choice_string)
-        if 0 <= choice < len(menu_options):
+        if not 0 <= choice < len(menu_options):
             raise NonValidOptionError("No such option")
     except ValueError:
         print("Please enter option that is a number")
@@ -44,4 +48,11 @@ def run_option(option: int):
         higher_lower()
     elif option == 2:
         go_fish()
-    pass
+    elif option == 3:
+        memory()
+    elif option == 4:
+        pyramid()
+
+
+if __name__ == "__main__":
+    menu()
