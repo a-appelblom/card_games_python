@@ -1,3 +1,4 @@
+from random import shuffle
 from typing import List
 from card import Card, CardSuit, CardValue
 
@@ -12,3 +13,9 @@ class Deck:
 
     def pull_card(self):
         return self.cards.pop()
+
+    def shuffle(self):
+        shuffle(self.cards)
+
+    def reset_deck(self):
+        self.__init__()
