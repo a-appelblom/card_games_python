@@ -19,3 +19,6 @@ class Deck:
 
     def reset_deck(self):
         self.__init__()
+
+    def get_card_count(self):
+        return len(self.cards)
